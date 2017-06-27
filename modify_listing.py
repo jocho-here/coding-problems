@@ -4,7 +4,7 @@ cpp = os.listdir('c++')
 java = os.listdir('java')
 python = os.listdir('python')
 
-new_readme = open('README_temp.md', 'w')
+new_readme = open('README.md', 'w')
 
 new_readme.write("# Coding Problems\n")
 new_readme.write("\n")
