@@ -1,12 +1,15 @@
 def wiggleSort(nums):
-	nums.sort()
+	bigger = True
 	i = 1
 
 	while i < len(nums):
-		temp = nums.pop()
-		nums.insert(i, temp)
-		i += 2
-	
-nums = [1,2,3,4,5]
+		if (bigger and (not nums[i - 1] <= nums[i])) or (not bigger and (not nums[i - 1] >= nums[i])):
+			temp = nums[i]
+			nums[i] = nums[i - 1]
+			nums[i - 1] = temp
+		else:
+			i += 1
+			bigger = not bigger
+
+nums = [1,2,3]
 wiggleSort(nums)
-print nums

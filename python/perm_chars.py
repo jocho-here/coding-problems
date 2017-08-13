@@ -43,7 +43,7 @@ else:
 			print(perms.index(str_form))
 	
 	if answer and len(perms) == len(answers):
-		print("Correct!")
+		print(perms)
 	else:
 		print("Wrong!")
 		print("len(perms) = " + str(len(perms)))
