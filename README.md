@@ -17,19 +17,23 @@
 8. find leaves of binary tree 
 9. flip game 
 10. hamming distance 
-11. keyboard row 
-12. logger rate limiter 
-13. maximum product of word lengths 
-14. moving average from data stream 
-15. nested list weight sum 
-16. nim game 
-17. number complement 
-18. output contest matches 
-19. palindrome permutation 
-20. perm chars 
-21. range addition 
-22. reshape the matrix 
-23. unique char 
-24. wiggle sort 
+11. insertionsort 
+12. keyboard row 
+13. logger rate limiter 
+14. maximum product of word lengths 
+15. moving average from data stream 
+16. nested list weight sum 
+17. nim game 
+18. number complement 
+19. output contest matches 
+20. palindrome permutation 
+21. perm chars 
+22. permutation 
+23. quicksort 
+24. range addition 
+25. reshape the matrix 
+26. sol quicksort 
+27. unique char 
+28. wiggle sort 
 
 ### Let's solve problems!
