@@ -24,18 +24,21 @@
 15. maximum product of word lengths 
 16. palindrome permutation 
 17. perm chars 
-18. logger rate limiter 
-19. chuseok traffic 
-20. reshape the matrix 
-21. range addition 
-22. permutation 
-23. wiggle sort 
-24. closest binary search tree value 
-25. max length tree 
-26. unique char 
-27. keyboard row 
-28. hamming distance 
-29. complex number multiplication 
-30. nim game 
+18. string split 
+19. logger rate limiter 
+20. chuseok traffic 
+21. reshape the matrix 
+22. range addition 
+23. permutation 
+24. longest increasing subsequence 
+25. wiggle sort 
+26. closest binary search tree value 
+27. max length tree 
+28. unique char 
+29. keyboard row 
+30. hamming distance 
+31. complex number multiplication 
+32. nim game 
+33. fibonacci 
 
 ### Let's solve problems!
