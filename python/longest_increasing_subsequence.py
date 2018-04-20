@@ -20,20 +20,26 @@ def process_backtracking(i, tot, prev):
 # Dynamic programming method
 # O(n^2)
 def process_dp():
-	global int_list
-	int_list = [-99999] + int_list
+	dp_list = [-99999] + int_list
 
 	ds = []
 
-	for i in range(len(int_list)):
-		ds.append([0] * len(int_list))
+	for i in range(len(dp_list)):
+		ds.append([0] * (len(dp_list) + 1))
 	
-	for j in range(len(int_list) - 2, -1, -1):
+	for j in range(len(dp_list) - 1, 0, -1):
 		for i in range(0, j):
-			if int_list[i] >= int_list[j]:
+			if dp_list[i] >= dp_list[j]:
 				ds[i][j] = ds[i][j+1]
 			else:
 				ds[i][j] = max(ds[i][j+1], 1 + ds[j][j+1])
+
+			print(dp_list)
+			print('dp_list[i]:' + str(dp_list[i]) + ', dp_list[j]: ' + str(dp_list[j]))
+			for k in ds:
+				print(k)
+			print('')
+			a = raw_input('')
 	
 	return ds[0][1]
 

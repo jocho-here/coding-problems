@@ -1,7 +1,6 @@
 # Coding Problems
 
 ## C++
-1. prime permutation 
 
 ## Java
 1. CountCharOfString
@@ -13,32 +12,38 @@
 4. beautiful arrangement 
 5. divisible room num input. 
 6. insertionsort 
-7. sol quicksort 
-8. number complement 
-9. bigger version 
-10. find leaves of binary tree 
-11. divisible room num 
-12. quicksort 
-13. flip game 
-14. output contest matches 
-15. maximum product of word lengths 
-16. palindrome permutation 
-17. perm chars 
-18. string split 
-19. logger rate limiter 
-20. chuseok traffic 
-21. reshape the matrix 
-22. range addition 
-23. permutation 
-24. longest increasing subsequence 
-25. wiggle sort 
-26. closest binary search tree value 
-27. max length tree 
-28. unique char 
-29. keyboard row 
-30. hamming distance 
-31. complex number multiplication 
-32. nim game 
-33. fibonacci 
+7. asdf 
+8. sol quicksort 
+9. number complement 
+10. bigger version 
+11. find leaves of binary tree 
+12. divisible room num 
+13. prime in permutation 
+14. quicksort 
+15. flip game 
+16. output contest matches 
+17. maximum product of word lengths 
+18. palindrome permutation 
+19. perm chars 
+20. string split 
+21. logger rate limiter 
+22. chuseok traffic 
+23. reshape the matrix 
+24. arithmetic progression 
+25. range addition 
+26. experimental res 
+27. permutation 
+28. longest increasing subsequence 
+29. wiggle sort 
+30. closest binary search tree value 
+31. max length tree 
+32. edit distance 
+33. unique char 
+34. keyboard row 
+35. hamming distance 
+36. complex number multiplication 
+37. nim game 
+38. fibonacci 
+39. ab unfairness 
 
 ### Let's solve problems!
