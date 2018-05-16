@@ -27,19 +27,20 @@
 24. reshape the matrix 
 25. arithmetic progression 
 26. range addition 
-27. experimental res 
-28. permutation 
-29. longest increasing subsequence 
-30. wiggle sort 
-31. closest binary search tree value 
-32. max length tree 
-33. edit distance 
-34. unique char 
-35. keyboard row 
-36. hamming distance 
-37. complex number multiplication 
-38. nim game 
-39. fibonacci 
-40. ab unfairness 
+27. longest palindrome 
+28. experimental res 
+29. permutation 
+30. longest increasing subsequence 
+31. wiggle sort 
+32. closest binary search tree value 
+33. max length tree 
+34. edit distance 
+35. unique char 
+36. keyboard row 
+37. hamming distance 
+38. complex number multiplication 
+39. nim game 
+40. fibonacci 
+41. ab unfairness 
 
 ### Let's solve problems!

@@ -1,4 +1,7 @@
+#!/usr/bin/python
+
 import os
+import subprocess
 
 python = os.listdir('python')
 
@@ -19,3 +22,7 @@ new_readme.write("\n")
 new_readme.write("### Let's solve problems!")
 new_readme.write("\n")
 new_readme.close()
+
+subprocess.call(['git', 'add', '.'])
+subprocess.call(['git', 'commit', '-m', 'Updated'])
+subprocess.call(['git', 'push', 'origin', 'master'])
