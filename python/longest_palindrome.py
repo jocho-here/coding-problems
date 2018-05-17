@@ -1,10 +1,14 @@
 # Longest Palindromic Substring
-#  - Given a string 's', find the longest palindromic substring in 's'.  You may assume that the maximum length of 's' is 1000.
+#
+# - Given a string 's', find the longest palindromic substring in 's'.  You may
+#   assume that the maximum length of 's' is 1000.
 
-# Explanation: It goes from left to right and checks the longest target substring using
-#              the brute-force algorithm.
-# Run time: O(n^2).  The outer index increases over 's' and the inner index increases from current outer index to as far as it
-#           reach while maintaining palindromic substring
+
+# Explanation: It goes from left to right and checks the longest target substring
+#              using the brute-force algorithm.
+# Run Time: O(n^2).  The outer index increases over 's' and the inner index
+#           increases from current outer index to as far as it reach while
+#           maintaining palindromic substring
 def longest_palindrome_recurrence(s, c):
     if len(s) == c:
         return ''
@@ -40,9 +44,11 @@ def longest_palindrome_recurrence(s, c):
 
     return result
 
-# Explanation: It memorizes palindrome substrings and when it finds two matching end chars (front & end), it just checks 
-#              whether things in the middle is a palindromic substring.
-# Run time: O(n^2).  The outer index increases over 's' and the inner index increases from 0 to current outer index
+# Explanation: It memorizes palindrome substrings and when it finds two matching end
+#              chars (front & end), it just checks whether things in the middle is a
+#              palindromic substring.
+# Run Time: O(n^2).  The outer index increases over 's' and the inner index increases
+#           from 0 to current outer index
 def longest_palindrome_dp(s):
     curr_max = ''
     table = []

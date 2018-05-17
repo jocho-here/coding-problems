@@ -17,30 +17,31 @@
 14. prime in permutation 
 15. quicksort 
 16. flip game 
-17. output contest matches 
-18. maximum product of word lengths 
-19. palindrome permutation 
-20. perm chars 
-21. string split 
-22. logger rate limiter 
-23. chuseok traffic 
-24. reshape the matrix 
-25. arithmetic progression 
-26. range addition 
-27. longest palindrome 
-28. experimental res 
-29. permutation 
-30. longest increasing subsequence 
-31. wiggle sort 
-32. closest binary search tree value 
-33. max length tree 
-34. edit distance 
-35. unique char 
-36. keyboard row 
-37. hamming distance 
-38. complex number multiplication 
-39. nim game 
-40. fibonacci 
-41. ab unfairness 
+17. maximum product subarray 
+18. output contest matches 
+19. maximum product of word lengths 
+20. palindrome permutation 
+21. perm chars 
+22. string split 
+23. logger rate limiter 
+24. chuseok traffic 
+25. reshape the matrix 
+26. arithmetic progression 
+27. range addition 
+28. longest palindrome 
+29. experimental res 
+30. permutation 
+31. longest increasing subsequence 
+32. wiggle sort 
+33. closest binary search tree value 
+34. max length tree 
+35. edit distance 
+36. unique char 
+37. keyboard row 
+38. hamming distance 
+39. complex number multiplication 
+40. nim game 
+41. fibonacci 
+42. ab unfairness 
 
 ### Let's solve problems!
