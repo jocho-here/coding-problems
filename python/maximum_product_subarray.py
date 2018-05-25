@@ -6,13 +6,13 @@
 # - Output: 6 because 3 * 2
 
 
-# Explanation: Smarter DP.  The algorithm uses the fact that we don't really need 
+# Explanation: Smarter DP.  The algorithm uses the fact that we don't really need consider
 #              numbers between the lowest and the highest numbers because whatever comes
 #              in between the lowest and the highest numbers, they could be covered by
-#              either the lowest one or the highest one.  Also, for any combination of
-#              the highest and lowest, when multiplied by negative, lowest becomes
-#              the next highest and the highest becomes the next lowest while when
-#              multiplied by positive, they stay the same.
+#              either the lowest one or the highest one.
+#              Also, for any combination of the highest and lowest, when multiplied by
+#              negative, lowest becomes the next highest and the highest becomes the next
+#              lowest while when multiplied by positive, they stay the same.
 #              Finally, we have to keep in mind that current entry could be bigger than
 #              both the lowest and the highest in case where they are both negative and
 #              the current entry is positive.  So we have to track current, 
@@ -45,12 +45,15 @@ def sol_unique(nums):
 def sol_dp(nums):
     table = []
 
+    curr_max = nums[0]
+
     for i in range(len(nums)):
         temp = [1] * len(nums)
         temp[i] = nums[i]
         table.append(temp)
 
-    curr_max = nums[0]
+        if nums[i] > curr_max:
+            curr_max = nums[i]
 
     for i in range(len(nums)):
         for j in range(i):
@@ -78,7 +81,7 @@ def sol_recur_helper(nums, i, result):
     if i == len(nums):
         return result
 
-    in_curr = sol_recur_helper(nums, i+1, result*nums[i])
+    in_curr = sol_recur_helper(nums, i+1, result * nums[i])
     ex_curr = sol_recur_helper(nums, i+1, nums[i])
 
     return max(result, in_curr, ex_curr)
@@ -95,9 +98,9 @@ def sol_brute(nums):
 
     curr_max = nums[0]
     
-    for i in range(len(nums)):
+    for i in range(len(nums)): # outer index
         curr_mult = 1
-        for j in range(i, len(nums)):
+        for j in range(i, len(nums)): # inner index
             curr_mult *= nums[j]
 
             if curr_mult > curr_max:
@@ -109,3 +112,4 @@ nums = [-1,-4,4,-4,-5,-2,-1,-1,2,3,5,1,3,-6,-1,-1,-2,-1,-4,4,-4,-5,-2,-1,-1,2,3,
 #print(sol_recur(nums))
 #print(sol_brute(nums))
 #print(sol_unique(nums))
+#print(sol_dp(nums))
