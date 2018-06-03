@@ -6,7 +6,7 @@
 # - Output: 6 because 3 * 2
 
 
-# Explanation: Smarter DP.  The algorithm uses the fact that we don't really need consider
+# Explanation: Smarter DP.  The algorithm uses the fact that we don't really need to consider
 #              numbers between the lowest and the highest numbers because whatever comes
 #              in between the lowest and the highest numbers, they could be covered by
 #              either the lowest one or the highest one.
@@ -42,6 +42,7 @@ def sol_unique(nums):
 
 # Explanation: It saves multiples in the table for future reference
 # Run Time: O(n^2).
+# Note: As efficient as brute-force solution
 def sol_dp(nums):
     table = []
 

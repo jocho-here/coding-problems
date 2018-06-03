@@ -1,75 +1,94 @@
-import sys
+# Explanation: As we've explored in recursive algorithm, we have three choices to make: insert, delete,
+#              and either replace or leave it as it is.  At every point, we only want to look at the 
+#              operations up to next character plus the minimum of the three choices upon the current
+#              character.  Such recurrence eventually look at a certain character repeatedly because
+#              numerous recursive calls would be looking at the same point again and again.  We also
+#              realize that at every point, we need to consider three dependencies, which are:
+#                 - (i, j+1) + 1
+#                 - (j+1, i) + 1
+#                 - (i+1, j+1) + (word1[i] != word2[j])
+#              Through memoizing those "future" point operations in two-dimensional data structure, we
+#              could save running time.
+#              The base cases are when we are at i or j and we disregard no-op characters and just count
+#              all operations needed from that certain i or j to the last character.
+# Run Time: O(n * m) since we are filling up a two-dimensional data structure of the size (n * m).
+def min_distance_dp(word1, word2):
+    edit_d = []
 
-input_1 = ''
-input_2 = ''
-ds = None
+    for i in range(len(word1)):
+        temp = [0] * len(word2) + [i+1]
+        edit_d.insert(0, temp)
 
-# Example: AL[G][O]R[ ]I[ ]T[H][M]   ==>  6
-#          AL T    R U I S T I  C
-#
-# Recursive algorithm
-#
-# Running time is roughly between O(2^n) and O(3^n)
-#
-# Calculate all the possibilities and get the minimum
-# 1. Basecase is when either i or j is 0, then we just return as much as we have left
-#    with the other word
-# 2. Otherwise compare...:
-# 	a) When we add input_1[i] character to input_2        (insertion)
-#	b) When we delete input_2[j] from input_2             (deletion)
-#	c) When we count 'i'th and 'j'th, both, characters    (substitution)
-#		- If input_1[i] == input_2[j]       >>>   No change so don't count
-#		- Else if input_1[i] != input_2[j]  >>>   Substitution so add 1
-def edit_distance_recursive(i, j):
-	if i == 0:
-		return j
-	elif j == 0:
-		return i
-	
-	a = edit_distance_recursive(i - 1, j) + 1    # +1 for insertion
-	b = edit_distance_recursive(i, j - 1) + 1    # +1 for deletion
-	c = edit_distance_recursive(i - 1, j - 1) \
-	           + (input_1[i-1] != input_2[j-1])  # possible +1 for substitution
-	
-	return min(a,b,c)
+    temp = []
+    for j in range(len(word2) + 1):
+        temp.insert(0, j)
 
-# DP algorithm
-#
-# Running time is O(nm)
-#
-# Decrease running time y memoization over dependencies ([i-1,j], [i,j-1], [i-1,j-1])
-#
+    edit_d.append(temp)
 
-def edit_distance_dp(i, j):
-	ds = [range(len(input_2)+1)]
+    for i in range(len(word2) - 1, -1, -1):
+        for j in range(len(word1) - 1, -1, -1):
+            edit_d[j][i] = min(edit_d[j][i+1] + 1, \
+                               edit_d[j+1][i] + 1, \
+                               edit_d[j+1][i+1] + (word1[j] != word2[i]))
 
-	for i in range(1, len(input_1)+1):
-		temp = [i] + [0]*(len(input_2))
-		ds.append(temp)
-	
-	for i in range(1, len(input_1)+1):
-		#ds[i][0] = i
+    return edit_d[0][0]
+    
+    
+# Explanation: We have 4 options: insert, delete, and replace, if not maching, or leave the current
+#              character if matching.  Our recursive solution will try to explore all the possibilities
+#              and come up with the optimum solution of them all.  The algorithm will compare
+#              the number of operations needed for when inserting, deleting, replacing, or leaving
+#              the current goal's char.  For every option, the algorithm calls the function recursively
+#              and look at the next step to take.
+#              Base case is when the index hits the length of word2 or length of word1
+# Run Time: O(n^3) is the upper limit when we consider replacing everytime and O(n^2) is the lower
+#           limit when we don't at all
+# Improvement: We realize that our string manipulation to make new word1 takes quite a lot of time and
+#              also unnecessary because we don't really need to track what we've added or deleted since
+#              if we keep two indices and move as accordingly, for addition, we could say we've added 
+#              the current word2's char to word1 and therefore, we can increment word2's index and move on
+#              to the next char of word2.  For the deletion, we could say we've deleted current word1's
+#              char, therefore increment word1's index while keeping word2's index as it is.
+#              The base case is when we either hit the len(word1) with i or len(word2) with j.  In that
+#              case, we should return the left-overs; if i == len(word1), then we should return how many
+#              steps are further needed to add to word1 so it matches with word2; if j == len(word2), then
+#              we should return how many steps are further needed to delete chars in word1 so it matches 
+#              with word2 since the word2 indes has reached the end of it.
+def min_distance_recur(word1, word2):
+    return min_distance_recur_smart_helper1(0, 0, word1, word2)
+    #return min_distance_recur_helper(0, 0, word1, word2)
+    
+# Smarter way, mimicing CS 374 algorithm.  The original version was counter-intuitive so
+# I made it to go bottom up
+def min_distance_recur_smart_helper(i, j, word1, word2):
+    if i == len(word1):
+        return len(word2) - j
+    elif j == len(word2):
+        return len(word1) - i
 
-		for j in range(1, len(input_2)+1):
-			if input_1[i-1] == input_2[j-1]:
-				ds[i][j] = min(ds[i-1][j]+1,ds[i][j-1]+1,ds[i-1][j-1])
-			else:
-				ds[i][j] = min(ds[i-1][j],ds[i][j-1],ds[i-1][j-1]) + 1
+    a = min_distance_recur_smart_helper(i, j+1, word1, word2) + 1 # insertion
+    b = min_distance_recur_smart_helper(i+1, j, word1, word2) + 1 # deletion
+    c = min_distance_recur_smart_helper(i+1, j+1, word1, word2) + (word1[i] != word2[j])
 
-			print('i: ' + str(i-1) + ',j: ' + str(j-1))
+    return min(a,b,c)
 
-			for k in ds:
-				print(k)
-			print('')
-			a = raw_input('')
+# Very intuitive recursive function
+def min_distance_recur_helper(i, count, word1, word2):
+    if i == len(word2) or i == len(word1):
+        return count + abs(len(word1) - len(word2))
 
-	return ds[len(input_1)][len(input_2)]
+    insert = min_distance_recur_helper(i+1, count+1, word1[:i] + word2[i] + word1[i:], word2)
+    delete = min_distance_recur_helper(i, count+1, word1[:i] + word1[i+1:], word2)
+    
+    if word1[i] == word2[i]:
+        replace = min_distance_recur_helper(i+1, count, word1, word2)
+    else:
+        replace = min_distance_recur_helper(i+1, count+1, word1[:i] + word2[i] + word1[i+1:], word2)
 
-if len(sys.argv) != 3:
-	print("usage: python edit_distance.py <input_string_1> <iput_string_2>")
-else:
-	input_1 = sys.argv[1]
-	input_2 = sys.argv[2]
-
-	#print(edit_distance_recursive(len(input_1), len(input_2)))
-	print(edit_distance_dp(input_1, input_2))
+    return min(insert, delete, replace)
+    
+#print(min_distance_recur('horse', 'ros'))
+#print(min_distance_recur('prosperity', 'properties')) # time limit exceeded on leetcode
+print(min_distance_dp('horse', 'ros'))
+print(min_distance_dp('interaction', 'execution'))
+print(min_distance_dp('prosperity', 'properties'))
