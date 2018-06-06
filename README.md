@@ -8,42 +8,41 @@
 5. beautiful arrangement 
 6. divisible room num input. 
 7. insertionsort 
-8. asdf 
-9. sol quicksort 
-10. number complement 
-11. hanoi 
-12. bigger version 
-13. find leaves of binary tree 
-14. divisible room num 
-15. prime in permutation 
-16. quicksort 
-17. flip game 
-18. maximum product subarray 
-19. output contest matches 
-20. maximum product of word lengths 
-21. maximal rectangle 
-22. palindrome permutation 
-23. perm chars 
-24. string split 
-25. logger rate limiter 
-26. chuseok traffic 
-27. reshape the matrix 
-28. arithmetic progression 
-29. range addition 
-30. longest palindrome 
-31. experimental res 
-32. permutation 
-33. longest increasing subsequence 
-34. wiggle sort 
-35. closest binary search tree value 
-36. max length tree 
-37. edit distance 
-38. unique char 
-39. keyboard row 
-40. hamming distance 
-41. complex number multiplication 
-42. nim game 
-43. fibonacci 
-44. ab unfairness 
+8. sol quicksort 
+9. number complement 
+10. hanoi 
+11. bigger version 
+12. find leaves of binary tree 
+13. divisible room num 
+14. prime in permutation 
+15. quicksort 
+16. flip game 
+17. maximum product subarray 
+18. output contest matches 
+19. maximum product of word lengths 
+20. maximal rectangle 
+21. palindrome permutation 
+22. perm chars 
+23. string split 
+24. logger rate limiter 
+25. chuseok traffic 
+26. reshape the matrix 
+27. arithmetic progression 
+28. range addition 
+29. longest palindrome 
+30. experimental res 
+31. permutation 
+32. longest increasing subsequence 
+33. wiggle sort 
+34. closest binary search tree value 
+35. max length tree 
+36. edit distance 
+37. unique char 
+38. keyboard row 
+39. hamming distance 
+40. complex number multiplication 
+41. nim game 
+42. fibonacci 
+43. ab unfairness 
 
 ### Let's solve problems!

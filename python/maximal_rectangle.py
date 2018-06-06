@@ -52,7 +52,7 @@ def change_to_cumulative(rect):
 # Run Time: O(n^2).  We have O(n) from the change_to_cumulative(), O(n) for the 
 #           inner loop that goes deeper down, and the O(n) for the outer loop that
 #           loops through the whole rectangle, which together become O(n^2).
-def sol_rec(matrix):
+def sol_bruteforce(matrix):
     new_rect = change_to_cumulative(matrix)
     rtn_val = 0
 
