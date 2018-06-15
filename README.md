@@ -6,43 +6,48 @@
 3. moving average from data stream 
 4. nested list weight sum 
 5. beautiful arrangement 
-6. divisible room num input. 
-7. insertionsort 
-8. sol quicksort 
-9. number complement 
-10. hanoi 
-11. bigger version 
-12. find leaves of binary tree 
-13. divisible room num 
-14. prime in permutation 
-15. quicksort 
-16. flip game 
-17. maximum product subarray 
-18. output contest matches 
-19. maximum product of word lengths 
-20. maximal rectangle 
-21. palindrome permutation 
-22. perm chars 
-23. string split 
-24. logger rate limiter 
-25. chuseok traffic 
-26. reshape the matrix 
-27. arithmetic progression 
-28. range addition 
-29. longest palindrome 
-30. experimental res 
-31. permutation 
-32. longest increasing subsequence 
-33. wiggle sort 
-34. closest binary search tree value 
-35. max length tree 
-36. edit distance 
-37. unique char 
-38. keyboard row 
-39. hamming distance 
-40. complex number multiplication 
-41. nim game 
-42. fibonacci 
-43. ab unfairness 
+6. unique binary search trees 
+7. divisible room num input. 
+8. insertionsort 
+9. perfect squares 
+10. sol quicksort 
+11. number complement 
+12. hanoi 
+13. bigger version 
+14. unique paths 
+15. ma 
+16. find leaves of binary tree 
+17. divisible room num 
+18. prime in permutation 
+19. quicksort 
+20. flip game 
+21. maximum product subarray 
+22. output contest matches 
+23. maximum product of word lengths 
+24. maximal rectangle 
+25. palindrome permutation 
+26. perm chars 
+27. string split 
+28. logger rate limiter 
+29. chuseok traffic 
+30. reshape the matrix 
+31. arithmetic progression 
+32. range addition 
+33. longest palindrome 
+34. experimental res 
+35. permutation 
+36. longest increasing subsequence 
+37. wiggle sort 
+38. triangle 
+39. closest binary search tree value 
+40. max length tree 
+41. edit distance 
+42. unique char 
+43. keyboard row 
+44. hamming distance 
+45. complex number multiplication 
+46. nim game 
+47. fibonacci 
+48. ab unfairness 
 
 ### Let's solve problems!

@@ -3,15 +3,30 @@
 #   that is only consisted of 1's
 
 # Explanation: The algorithm looks at the matrix in the similar way as the recursive
-#              algorithm does but it builds up the cumulative matrix as it goes.
-#              Since the cumulative numbers are built from right to left, we want to
-#              start from the bottom right and build our way up to the top left so
-#              we could use memoization to make our running time faster.
-#              While we are building the cumulative matrix, as previously, we are going
-#              to calculate the maximum rectangle as we go with the same algorithm as
-#              the recursive algorithm.
+#              algorithm does but it builds up the cumulative heights as it goes.
 def sol_dp(matrix):
-    return "Need to work on this"
+    if len(matrix) == 0:
+        return 0
+
+    curr_hist = [0] * len(matrix[0])
+    curr_max = 0
+
+    for r in range(len(matrix)):
+        for c in range(len(matrix[r])):
+            if matrix[r][c] == '0':
+                curr_hist[c] = 0
+            else:
+                curr_hist[c] += int(matrix[r][c])
+
+        for c in range(len(matrix[r])):
+            min_height = curr_hist[c]
+
+            for cc in range(c, len(matrix[r])):
+                if curr_hist[cc] < min_height:
+                    min_height = curr_hist[cc]
+                curr_max = max(curr_max, (cc - c + 1) * min_height)
+
+    return curr_max
 
 # Helper function
 def change_to_cumulative(rect):
@@ -49,7 +64,7 @@ def change_to_cumulative(rect):
 #              go deeper down, we will only be able to count as many 1's as that
 #              smallest cumulative number much.  So we have to keep in track of
 #              current rectangle is biggest as we go down the rows.
-# Run Time: O(n^2).  We have O(n) from the change_to_cumulative(), O(n) for the 
+# Run Time: O(mn^2).  We have O(n) from the change_to_cumulative(), O(n) for the 
 #           inner loop that goes deeper down, and the O(n) for the outer loop that
 #           loops through the whole rectangle, which together become O(n^2).
 def sol_bruteforce(matrix):
@@ -59,7 +74,6 @@ def sol_bruteforce(matrix):
     for rr in range(len(new_rect)):
         for c in range(len(new_rect[rr])):
             min_cul = new_rect[rr][c]
-            curr_max = new_rect[rr][c]
 
             for r in range(rr, len(new_rect)):
                 if new_rect[r][c] == 0:
@@ -67,15 +81,17 @@ def sol_bruteforce(matrix):
                 else:
                     if new_rect[r][c] < min_cul:
                         min_cul = new_rect[r][c]
-                    curr_max = max((r-rr+1)*min_cul, curr_max)
-            rtn_val = max(curr_max, rtn_val)
+                    rtn_val = max((r-rr+1)*min_cul, rtn_val)
+
     return rtn_val
 
 
 rect = [
-           ["1","1","1","0","0"],
-           ["1","1","1","1","1"],
-           ["1","1","1","0","1"],
-           ["1","0","0","1","0"]
+           ["1","1","1","0","0","1","1","1","0","0","1","1","1","0","0","1","1","1","0","0"],
+           ["1","1","1","0","0","1","1","1","0","0","1","1","1","0","0","1","1","1","1","1"],
+           ["1","1","1","0","0","1","1","1","0","0","1","1","1","0","0","1","1","1","1","1"],
+           ["1","0","0","1","0","1","0","0","1","0","1","0","0","1","0","1","0","0","1","0"],
+           ["1","1","1","0","0","1","1","1","0","0","1","1","1","0","0","1","1","1","0","0"]
        ]
-print(sol_rec(rect))
+
+print(sol_dp(rect))
