@@ -32,20 +32,21 @@
 29. arithmetic progression 
 30. range addition 
 31. longest palindrome 
-32. permutation 
-33. longest increasing subsequence 
-34. wiggle sort 
-35. triangle 
-36. closest binary search tree value 
-37. max length tree 
-38. edit distance 
-39. unique char 
-40. keyboard row 
-41. hamming distance 
-42. complex number multiplication 
-43. burst balloons 
-44. nim game 
-45. fibonacci 
-46. ab unfairness 
+32. regular expression matching 
+33. permutation 
+34. longest increasing subsequence 
+35. wiggle sort 
+36. triangle 
+37. closest binary search tree value 
+38. max length tree 
+39. edit distance 
+40. unique char 
+41. keyboard row 
+42. hamming distance 
+43. complex number multiplication 
+44. burst balloons 
+45. nim game 
+46. fibonacci 
+47. ab unfairness 
 
 ### Let's solve problems!
